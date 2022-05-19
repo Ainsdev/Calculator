@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculators</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+    </style>
+
+<body>
+    <h1 class="title">Calculators</h1>
+    <main>
+        <!-- Normal Calculator -->
+        <div class="normal_calculator">
+            <h1>Normal Calculator</h1>
+            <!-- Result -->
+            <div class="calculator_result">result</div>
+            <!-- Result -->
+            <div class="calculator_buttons" onselectstart="return false">
+                <div class="button_calculator_div"><button class="button_calculator">AC</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">^</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">%</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">/</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">7</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">8</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">9</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">X</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">4</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">5</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">6</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">-</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">1</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">2</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">3</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">+</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">0</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">.</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">Del</button></div>
+                <div class="button_calculator_div"><button class="button_calculator">=</button></div>
+            </div>
+        </div>
+        <!-- Normal Calculator -->
+        <!-- Risk Calculator -->
+        <div class="risk_calculator">
+            <h1>Trading Calculator</h1>
+            <div class="risk_calculator_div"><span>Margin:</span><input min="0" type="number" placeholder="$0"
+                    class="risk_calculator_margin">
+            </div>
+            <div class="risk_calculator_div"><span>Leverage:</span><input min="1" type="number" placeholder="X 1"
+                    class="risk_calculator_leverage">
+            </div>
+            <div class="risk_calculator_div"><span>Price:</span><input min="0" type="number" placeholder="Price"
+                    class="risk_calculator_Price">
+            </div>
+            <div class="risk_calculator_div"><span>Stop Loss:</span><input min="0" type="number" placeholder="0"
+                    class="risk_calculator_PriceSl">
+            </div>
+            <div class="risk_calculator_div"><span>Take Profit:</span><input min="0" type="number" placeholder="0"
+                    class="risk_calculator_PriceTp">
+            </div>
+            <!-- Result -->
+            <h2 class="risk_calculator_loss">Your Losses are:</h2>
+            <h2 class="risk_calculator_gain">Your Gains are:</h2>
+            <!-- Result -->
+        </div>
+        <!-- Risk Calculator -->
+    </main>
+</body>
+
+</html>
