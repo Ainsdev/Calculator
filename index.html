@@ -47,10 +47,8 @@
         <!-- Risk Calculator -->
         <div class="risk_calculator">
             <h1>Trading Calculator</h1>
-            <div class="risk_calculator_div"><span>Margin:</span><input min="0" type="number" placeholder="$0"
-                    class="risk_calculator_margin">
-            </div>
-            <div class="risk_calculator_div"><span>Leverage:</span><input min="1" type="number" placeholder="X 1"
+            <div class="risk_calculator_div_you"><span>Margin:</span><input min="0" type="number" placeholder="$0"
+                    class="risk_calculator_margin"><span>Leverage:</span><input min="1" type="number" placeholder="X 1"
                     class="risk_calculator_leverage">
             </div>
             <div class="risk_calculator_div"><span>Price:</span><input min="0" type="number" placeholder="Price"
@@ -63,12 +61,15 @@
                     class="risk_calculator_PriceTp">
             </div>
             <!-- Result -->
-            <h2 class="risk_calculator_loss">Your Losses are:</h2>
-            <h2 class="risk_calculator_gain">Your Gains are:</h2>
+            <div class="risk_calculator_div_result">
+                <h2 class="risk_calculator_loss">Losses:</h2>
+                <h2 class="risk_calculator_gain">Gains:</h2>
+            </div>
             <!-- Result -->
         </div>
         <!-- Risk Calculator -->
     </main>
+    <script src="app.js"></script>
 </body>
 
 </html>
