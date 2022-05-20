@@ -8,6 +8,14 @@
 }
 
 /* Title */
+
+.titles{
+    display: flex;
+    align-items: center;
+}
+.titles h2 {
+    color: var(--primary-color-two);
+}
 .title {
     overflow: visible;
     text-align: center;
