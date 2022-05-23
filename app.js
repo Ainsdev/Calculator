@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
                     display.innerText = display.innerText.slice(0, -1);
                     break;
                 case '=':
+                    console.log('Ecuacion sin procesar:' + display.innerText);
                     calculatorMath(display.innerText);
                     break;
                 default:
@@ -31,24 +32,27 @@ window.addEventListener('load', () => {
                 Calculate('*', calculation);
             } else if (calculation.includes('^') == true) {
                 Calculate('^', calculation);
+            } else if (calculation.includes('%') == true) {
+                Calculate('%', calculation);
             } else {
                 return display.innerText = 'no valid';
             }
 
             function Calculate(param, text) {
-                var index = text.indexOf(param);
-                var num1 = parseFloat(text.slice(0, index));
-                var num2 = parseFloat(text.slice(-index));
-                console.log(num1);
-                console.log(num2);
-                console.log(index);
+                let index = text.indexOf(param);
+                let num1 = parseFloat(text.slice(0, index));
+                let num2 = parseFloat(text.substr(index + 1));
+                console.log('num1:' + num1);
+                console.log('num2:' + num2);
+                console.log('index:' + index);
                 console.log(param);
-                var maths = {
+                let maths = {
                     '+': (x, y) => { return x + y },
                     '-': (x, y) => { return x - y },
                     '*': (x, y) => { return x * y },
                     '/': (x, y) => { return (x / y) },
-                    '^': (x, y) => { return x ^ y }
+                    '%': (x, y) => { return (x * y) / 100 },
+                    '^': (x, y) => { return Math.pow(x, y) }
                 };
                 return display.innerText = maths[param](num1, num2);
             }
@@ -57,7 +61,12 @@ window.addEventListener('load', () => {
     // Normal Calculator
     ///
     // Risk Calculator
+    const displayGains = document.querySelector('.risk_calculator_gain');
+    const displayLoss = document.querySelector('.risk_calculator_loss');
+    
+    const calculationFinal = (margin, leverage, price, stop) => {
 
+     }
     // Risk Calculator
 });
 

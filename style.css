@@ -65,12 +65,13 @@ main {
     text-align: center;
     color: black;
     font-size: large;
+    text-overflow: ellipsis;
     font-weight: bold;
     height: 10%;
     text-overflow: ellipsis;
     align-items: center;
     justify-content: center;
-    display: flex;
+    display: grid
 }
 
 .calculator_buttons {
@@ -106,63 +107,19 @@ main {
 /* Normal calculator */
 /* Risk Trading Calculator */
 .risk_calculator {
-    background-color: var(--primary-color);
+background-color: var(--primary-color);
     color: var(--main-color-two);
     padding: 5%;
     padding-top: 0px;
     margin: 5%;
     flex: 1;
     border-radius: 60px;
-
-    display: grid;
-
-}
-
-.risk_calculator_div {
-    margin: 10px;
-    display: flex;
-    flex-flow: column;
-}
-
-.risk_calculator_div_you {
-    display: flex;
-    align-items: center;
-}
-
-.risk_calculator_div_you input {
-    border: black solid 2px;
-    border-radius: 1rem;
-    background: #e8e8e8;
-    transition: 0.3s;
-    outline-color: none;
+    overflow: auto;
+    height: 500px;
     text-align: center;
-    width: 15%;
-    margin-left: 3%;
-    margin-right: 2%;
 }
-
-input {
-    border: black solid 2px;
-    padding: 1rem;
-    border-radius: 1rem;
-    background: #e8e8e8;
-    transition: 0.3s;
-    outline-color: none;
-    text-align: center;
-    margin-top: 2%;
-}
-
-input:focus {
-    transform: rotate(-0.003turn);
-    transition: 0.3s;
-    border: none;
-    z-index: 2;
-}
-
-.risk_calculator_div_result {
-    display: flex;
-    flex-flow: column nowrap;
-
+.line-numbers{
+   height: 75%;
 }
 
 

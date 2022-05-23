@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculators</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
     </style>
@@ -47,32 +48,77 @@
             </div>
         </div>
         <!-- Normal Calculator -->
-        <!-- Risk Calculator -->
         <div class="risk_calculator">
-            <h1>Trading Calculator</h1>
-            <div class="risk_calculator_div_you"><span>Margin:</span><input min="0" type="number" placeholder="$0"
-                    class="risk_calculator_margin"><span>Leverage:</span><input min="1" type="number" placeholder="X 1"
-                    class="risk_calculator_leverage">
-            </div>
-            <div class="risk_calculator_div"><span>Price:</span><input min="0" type="number" placeholder="Price"
-                    class="risk_calculator_Price">
-            </div>
-            <div class="risk_calculator_div"><span>Stop Loss:</span><input min="0" type="number" placeholder="0"
-                    class="risk_calculator_PriceSl">
-            </div>
-            <div class="risk_calculator_div"><span>Take Profit:</span><input min="0" type="number" placeholder="0"
-                    class="risk_calculator_PriceTp">
-            </div>
-            <!-- Result -->
-            <div class="risk_calculator_div_result">
-                <h2 class="risk_calculator_loss">Losses:</h2>
-                <h2 class="risk_calculator_gain">Gains:</h2>
-            </div>
-            <!-- Result -->
+            <h1>Code</h1>
+            <pre class="line-numbers">
+               <code class="language-javascript">
+                window.addEventListener('load', () => {
+                // Normal Calculator
+                const display = document.querySelector('.calculator_result');
+                let buttons = Array.from(document.getElementsByClassName("button_calculator"));
+                buttons.map(btn => {
+                btn.addEventListener('click', (e) => {
+                switch (e.target.innerText) {
+                case 'AC':
+                display.innerText = '';
+                break;
+                case 'Del':
+                display.innerText = display.innerText.slice(0, -1);
+                break;
+                case '=':
+                console.log('Ecuacion sin procesar:' + display.innerText);
+                calculatorMath(display.innerText);
+                break;
+                default:
+                display.innerText += e.target.innerText;
+                break;
+                
+                }
+                });
+                const calculatorMath = (calculation) => {
+                if (calculation.includes('+') == true) {
+                Calculate('+', calculation);
+                } else if (calculation.includes('-') == true) {
+                Calculate('-', calculation);
+                } else if (calculation.includes('/') == true) {
+                Calculate('/', calculation);
+                } else if (calculation.includes('*') == true) {
+                Calculate('*', calculation);
+                } else if (calculation.includes('^') == true) {
+                Calculate('^', calculation);
+                } else if (calculation.includes('%') == true) {
+                Calculate('%', calculation);
+                } else {
+                return display.innerText = 'no valid';
+                }
+                
+                function Calculate(param, text) {
+                let index = text.indexOf(param);
+                let num1 = parseFloat(text.slice(0, index));
+                let num2 = parseFloat(text.substr(index + 1));
+                console.log('num1:' + num1);
+                console.log('num2:' + num2);
+                console.log('index:' + index);
+                console.log(param);
+                let maths = {
+                '+': (x, y) => { return x + y },
+                '-': (x, y) => { return x - y },
+                '*': (x, y) => { return x * y },
+                '/': (x, y) => { return (x / y) },
+                '%': (x, y) => { return (x * y) / 100 },
+                '^': (x, y) => { return Math.pow(x, y) }
+                };
+                return display.innerText = maths[param](num1, num2);
+                }
+                }
+                });
+                // Normal Calculator
+               </code>
+            </pre>
         </div>
-        <!-- Risk Calculator -->
     </main>
     <script src="app.js"></script>
+    <script src="prism.js"></script>
 </body>
 
 </html>
